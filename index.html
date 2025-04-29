@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pO8XlfiQd8lMZ5N+fZWmI6DXpX0dQ+0f0R+YJeYakJO5sO4C7Q3f7Yl0C+4v9ljrE5E8k8XULV+Yw5u6KT9vXA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      padding: 10px 20px;
+      background: #f4f4f4;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .brand {
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+      margin-right: auto;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      margin: 0;
+      padding: 0;
+    }
+    nav ul li {
+      margin-left: 20px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-size: 16px;
+      transition: all 0.3s ease;
+    }
+    nav ul li a:hover {
+      color: #007acc;
+      font-style: italic;
+      font-weight: bold;
+    }
+    section {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    #about img {
+      width: 150px;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 20px;
+    }
+    #skills .skill {
+      display: inline-block;
+      text-align: center;
+      margin: 10px;
+    }
+    #skills .skill i {
+      font-size: 48px;
+      display: block;
+      margin-bottom: 5px;
+    }
+    #projects article, #recommendations article {
+      border: 1px solid #ddd;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+      background: #fafafa;
+    }
+    #recommendations ul {
+      padding: 0;
+      list-style: none;
+    }
+    #recommend-form {
+      margin-top: 20px;
+    }
+    #recommend-form input, #recommend-form textarea {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    #recommend-form button {
+      padding: 10px 20px;
+      border: none;
+      background: #007acc;
+      color: #fff;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    #recommend-form button:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body id="home">
+  <header>
+    <div class="brand">Christinah Mmabotse Mosima</div>
+    <nav>
+      <ul>
+        <li><a href="#home"><i class="fas fa-home"></i></a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Project details</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#recommendations">Recommendations</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <img src="/img.svg.jpeg" alt="Profile Image">
+    <h3>Christinah Mmabotse Mosima</h3>
+    <p>Hello! I'm a passionate web developer learning HTML, CSS, and JavaScript. I love building interactive websites and constantly improving my coding skills. Welcome to my portfolio page!</p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skill">
+      <i class="fab fa-html5"></i>
+      <span>HTML5</span>
+    </div>
+    <div class="skill">
+      <i class="fab fa-css3-alt"></i>
+      <span>CSS3</span>
+    </div>
+    <div class="skill">
+      <i class="fab fa-js"></i>
+      <span>JavaScript</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <article>
+      <h3>Project One: Interactive Quiz</h3>
+      <p>A web-based quiz game that dynamically loads questions and provides instant feedback.</p>
+    </article>
+    <article>
+      <h3>Project Two: To-Do List App</h3>
+      <p>A simple to-do list application with add, delete, and filter functionality, using local storage.</p>
+    </article>
+    <article>
+      <h3>Project Three: Image Gallery</h3>
+      <p>An image gallery that allows users to click thumbnails to view a larger version, with smooth CSS transitions.</p>
+    </article>
+  </section>
+
+  <section id="recommendations">
+    <h2>Recommendations</h2>
+    <ul id="recommend-list">
+      <li><strong>Alice:</strong> Great collaboration and problem-solving skills!</li>
+      <li><strong>Bob:</strong> Very creative with a keen eye for design.</li>
+      <li><strong>Charlie:</strong> Consistently delivers high-quality code on time.</li>
+    </ul>
+
+    <form id="recommend-form">
+      <h3>Add a Recommendation</h3>
+      <input type="text" id="rec-name" placeholder="Your Name" required>
+      <textarea id="rec-text" rows="3" placeholder="Your Recommendation" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+  <script>
+    document.getElementById('recommend-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = document.getElementById('rec-name').value.trim();
+      const text = document.getElementById('rec-text').value.trim();
+      if (name && text) {
+        const ul = document.getElementById('recommend-list');
+        const li = document.createElement('li');
+        li.innerHTML = `<strong>\${name}:</strong> \${text}`;
+        ul.appendChild(li);
+        alert('Thank you! Your recommendation has been submitted.');
+        document.getElementById('recommend-form').reset();
+      }
+    });
+  </script>
+</body>
+</html>

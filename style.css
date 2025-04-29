@@ -1,0 +1,68 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header {
+    background-color: #0110B9;
+    padding: 1rem;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  #name {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+    margin: 0;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+  
+  .profile-img {
+    width: 150px;
+    border-radius: 50%;
+  }
+  
+  .skills-grid {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .skills-grid div {
+    text-align: center;
+  }
+  
+  form {
+    margin-top: 1rem;
+  }
+  
+  form input {
+    padding: 0.5rem;
+    margin-right: 0.5rem;
+  }
+  
+  form button {
+    padding: 0.5rem;
+    background-color: #0110B9;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
